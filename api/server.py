@@ -27,9 +27,3 @@ app.include_router(resume_router)
 @app.get("/")
 async def health():
     return {"status": "ok"}
-
-
-if __name__ == "__main__":
-    
-
-    uvicorn.run("server:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
