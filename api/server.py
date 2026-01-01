@@ -13,7 +13,7 @@ app = FastAPI(title="X Post Generator")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173" , "https://x-post-frontend-iota.vercel.app/"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
