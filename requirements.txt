@@ -6,16 +6,16 @@ requests
 pydantic
 tweepy
 
-# LangChain (MCP compatible)
+# LangChain (Stable versions)
 langchain==0.2.16
 langchain-core==0.2.38
 langchain-groq==0.1.0
 
-# LangGraph (works with LangChain 0.2.x)
-langgraph==0.0.40
-langgraph-checkpoint==0.0.10
-langgraph-prebuilt==0.0.10
+# LangGraph (Removing fixed versions to prevent build failures)
+langgraph
+langgraph-checkpoint
+langgraph-prebuilt
 
 # MCP
-mcp==1.21.0
-langchain-mcp-adapters==0.1.12
+mcp
+langchain-mcp-adapters
