@@ -1,0 +1,35 @@
+import os
+import uvicorn
+from fastapi import FastAPI
+from api.router.generate import router as generate_router
+from api.router.resume1 import router as resume_router
+
+from fastapi.middleware.cors import CORSMiddleware
+
+
+app = FastAPI(title="X Post Generator")
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+app.include_router(generate_router)
+app.include_router(resume_router)
+
+
+@app.get("/")
+async def health():
+    return {"status": "ok"}
+
+
+if __name__ == "__main__":
+    
+
+    uvicorn.run("server:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
